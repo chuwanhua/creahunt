@@ -20,13 +20,13 @@
                             <path
                                 d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
                         </svg></a></li>
-                <li><a href="project.html">HOME</a></li>
+                <li><a href="index.html">HOME</a></li>
                 <li><a href="關於我們.html">關於我們</a></li>
                 <li><a href="服務介紹.html">服務介紹</a></li>
                 <li><a href="聯絡我們.html">聯絡我們</a></li>
             </ul>
             <ul>
-                <li><a href="project.html"
+                <li><a href="index.html"
                         style="text-decoration: none; color: inherit; background-color: transparent; transition: none;"><img
                             style="height: 50px; padding: 5px;" src="./pics/logo.png" alt="creahunter"
                             style="transition: none;"></a></li>
@@ -119,9 +119,9 @@
                 </div>
                 <div class="social-links">
                     <ul class="social-media">
-                        <li style="margin-left: 20px;"><A><a href="#"><i class='bx bxl-facebook'></i></box-icon></a></A>
+                        <li style="margin-left: 20px;"><A><a href="https://www.facebook.com/hunterlife2016/" target="_blank"><i class='bx bxl-facebook'></i></box-icon></a></A>
                         </li>
-                        <li><A><a href="#"><i class='bx bxl-instagram'></i></box-icon></a></A></li>
+                        <li><A><a href="https://www.instagram.com/hunterlife2016/" target="_blank"><i class='bx bxl-instagram'></i></box-icon></a></A></li>
                     </ul>
                 </div>
             </div>
@@ -146,10 +146,19 @@
                         <span>問題內容...</span>
                     </div>
                     <div class="inputBox">
-                        <input type="submit" value="提交" class="ct-btn">
+                        <input type="submit" value="提交" class="ct-btn" onclick="showCustomAlert()">
                     </div>
-                </form>
+
+                    <div id="customAlert" class="custom-alert">
+                        <div class="custom-alert-content">
+                            <p>提交成功</p>
+                            <button onclick="closeCustomAlert()">關閉</button>
+                        </div>
+                    </div>
+
             </div>
+            </form>
+        </div>
         </div>
     </section>
 
@@ -158,7 +167,7 @@
         <footer>
 
             <ul class="menu">
-                <li class="nav-item"><a href="project.html" class="nav-link px-2 text-body-secondary">Home</a></li>
+                <li class="nav-item"><a href="index.html" class="nav-link px-2 text-body-secondary">Home</a></li>
                 <li class="nav-item"><a href="關於我們.html" class="nav-link px-2 text-body-secondary">關於我們</a></li>
                 <li class="nav-item"><a href="服務介紹.html" class="nav-link px-2 text-body-secondary">服務介紹</a></li>
                 <li class="nav-item"><a href="聯絡我們.html" class="nav-link px-2 text-body-secondary">聯絡我們</a></li>
@@ -178,6 +187,16 @@
             const sidebar = document.querySelector('.sidebar')
             sidebar.style.display = 'none'
         }
+
+        // 提示框
+        function showCustomAlert() {
+            document.getElementById('customAlert').style.display = 'flex'; // 顯示彈出框
+        }
+
+        function closeCustomAlert() {
+            document.getElementById('customAlert').style.display = 'none'; // 關閉彈出框
+        }
+
     </script>
 </body>
 

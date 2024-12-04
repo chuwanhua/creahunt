@@ -144,7 +144,7 @@ nav li:first-child {
     font-weight: 900;
     line-height: 6vw;
     text-transform: capitalize;
-    margin-top: 10px;
+    margin-top: -10px;
     letter-spacing: 3px;
 }
 
@@ -165,22 +165,21 @@ nav li:first-child {
 }
 
 .text_container p {
-    font-size: 1.2rem;
     font-weight: 400;
     color: #1d2a56;
     margin-top: 10px;
+    
 }
 
 .text_container .btn {
 
-    --bs-btn-font-weight: 500;
-    --bs-btn-color: #c8a063;
-    --bs-btn-border-width: 1px;
-    --bs-btn-border-color: transparent;
-    --bs-btn-border-radius: 0.375rem;
+    font-weight: 500;
+    color: #c8a063;
+    border-width: 1px;
+    border-color: transparent;
+    border-radius: 0.375rem;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
     display: inline-block;
-    color: var(--bs-btn-color);
     text-align: center;
     text-transform: capitalize;
     letter-spacing: 2px;
@@ -188,22 +187,18 @@ nav li:first-child {
     text-decoration: none;
     vertical-align: middle;
     cursor: pointer;
-    border: var(--bs-btn-border-width) solid var(--bs-btn-border-color);
-    border-radius: var(--bs-btn-border-radius);
-    background-color: var(--bs-btn-bg);
     font-size: 1.2rem;
 }
 
 /* 按鈕選項 */
 .btn {
     transition: none;
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 3vw, 1.5rem);
 }
 
 .btn:hover {
     color: #f3f4f0;
     background-color: #c8a063;
-    border-color: var(--bs-btn-hover-border-color);
     padding: 6px 15px;
     transform: scale(1.2);
     transition: 0.5s ease;
@@ -239,7 +234,11 @@ nav li:first-child {
     top: 50%;
     right: 1vw;
     transform: translateY(-50%);
-    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 水平居中 */
+    z-index: 100;
 }
 
 .icons .fa {
@@ -298,10 +297,95 @@ nav li:first-child {
 }
 
 /* make it responsive */
-@media screen and (max-width:900px) {
-    bosy {
-        overflow: auto;
+@media screen and (max-width:768px) {
+    .animblob {
+        visibility: hidden;
     }
+
+    .logo {
+        font-size: 4vw;
+    }
+
+    .container {
+        flex-wrap: wrap;
+        overflow: visible;
+    }
+
+    .text_container {
+        width: 100%;
+        padding: 15vw 10vw;
+    }
+
+    .text_container h2 {
+        font-size: clamp(4rem, 7vw, 4rem);
+        line-height: clamp(3.5rem, 10vw, 5rem);
+    }
+
+    .text_container h5 {
+        font-size: 4.5vw;
+    }
+    .text_container p {
+        font-size: 3vw;
+    }
+   
+
+    .text_container .btn {
+        font-size: 2.3vw;
+        z-index: 10;
+        /* 提高优先级 */
+        position: relative;
+    }
+
+    .image_container {
+        width: 100%;
+        height: 40rem;
+        margin-top: -100px;
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+        overflow: hidden;
+    }
+
+    .imgbox {
+        height: 40rem;
+        margin: 0;
+    }
+
+    .icons {
+        position: fixed;
+        z-index: 100;
+        align-items: center;
+        gap: 4px;
+        width: clamp(2rem, 5vw, 4rem);
+        height: clamp(2rem, 5vw, 4rem);
+
+    }
+
+    .icons .fa {
+        padding-bottom: 1rem;
+        margin: 0;
+        width: clamp(2rem, 5vw, 4rem);
+        height: clamp(2rem, 5vw, 4rem);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* now customize scroll bar */
+    ::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: #1d2a56;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: #fff;
+
+    }
+}
+
+@media screen and (max-width:435px) {
 
     .animblob {
         visibility: hidden;
@@ -313,6 +397,7 @@ nav li:first-child {
 
     .container {
         flex-wrap: wrap;
+        overflow: visible;
     }
 
     .text_container {
@@ -321,64 +406,65 @@ nav li:first-child {
     }
 
     .text_container h2 {
-        font-size: 13vw;
-        line-height: 15vw;
+        font-size: clamp(3.5rem, 7vw, 4rem);
+        line-height: clamp(4rem, 10vw, 5rem);
     }
 
     .text_container h5 {
         font-size: 5vw;
     }
 
-    .text_container p,
-    {
-    font-size: 3vw;
-}
+    .text_container p {
+        font-size: 1rem;
+    }
 
-.text_container .btn {
-    margin-top: 2vw;
-    font-size: 2.5vw;
-}
+    .text_container .btn {
+        margin-top: 2vw;
+        font-size: 3.5vw;
+    }
 
-.image_container {
-    width: 100%;
-    height: 40rem;
-    margin-top: -100px;
-    overflow: hidden;
-}
+    .image_container {
+        width: 100%;
+        height: 40rem;
+        margin-top: -100px;
+        overflow: hidden;
+    }
 
-.imgbox {
-    height: 700px;
-    margin: 0;
-}
+    .imgbox {
+        height: 35rem;
+        margin: 0;
+    }
 
-.icons {
-    position: fixed;
-    z-index: 100;
-}
+    .icons {
+        position: fixed;
+        z-index: 100;
+    }
 
-.icons .fa {
-    padding: 1.7vw;
-}
+    .icons .fa {
+        padding: 1.7vw;
+    }
 
-/* now customize scroll bar */
-::-webkit-scrollbar {
-    width: 12px;
-}
+    /* now customize scroll bar */
+    ::-webkit-scrollbar {
+        width: 12px;
+    }
 
-::-webkit-scrollbar-track {
-    background-color: #1d2a56;
-}
+    ::-webkit-scrollbar-track {
+        background-color: #1d2a56;
+    }
 
-::-webkit-scrollbar-thumb {
-    background-color: #fff;
+    ::-webkit-scrollbar-thumb {
+        background-color: #fff;
 
-}
+    }
 }
 
 /* section-2標題樣式 */
 .scroll-container {
     padding: 10px;
     text-align: center;
+    width: 100%;
+
 }
 
 .scroll-container span {
@@ -395,10 +481,10 @@ nav li:first-child {
 .bodyh2 {
     display: flex;
     color: #1d2a56;
-    font-size: 3.5vw;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
     font-weight: 600;
     line-height: 1.4;
-    margin: 1px;
+    margin: 10px 0;
     padding: 10px 40px 0;
     /* Adjust line-height if needed */
 }
@@ -412,7 +498,8 @@ nav li:first-child {
 /* Description (p) styles */
 .bodyp {
     padding: 0 20px;
-    font-size: 1.2rem;
+    margin: 10px 20px;
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
     font-weight: 550;
     text-align: right;
     color: #c8a063;
@@ -450,6 +537,7 @@ nav li:first-child {
 /* 設定滾動內容樣式 */
 .scroll-content {
     display: flex;
+    flex-wrap: nowrap;
     animation: scroll-horizontal 30s linear infinite;
     /* 加入無限循環動畫 */
 }
@@ -465,6 +553,7 @@ nav li:first-child {
     justify-content: center;
     align-items: center;
     border-radius: 10px;
+    transition: transform 0.3s ease;
 }
 
 .item img {
@@ -475,6 +564,7 @@ nav li:first-child {
 
 .item img:hover {
     filter: grayscale(0%);
+
 }
 
 /* 無縫滾動動畫 */
@@ -500,12 +590,14 @@ nav li:first-child {
 /* scroll-btn 按鈕 */
 
 .scroll-container .secbtn {
-    --bs-btn-font-size: 3vw;
-    --bs-btn-font-weight: 600;
-    --bs-btn-color: #c8a063;
-    --bs-btn-border-width: 1px;
-    --bs-btn-border-color: transparent;
-    --bs-btn-border-radius: 0.375rem;
+    text-align: center;
+    vertical-align: middle;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    font-weight: 500;
+    color: #c8a063;
+    border-width: 1px;
+    border-color: transparent;
+    border-radius: 0.375rem;
     box-shadow: 1px 5px 5px #a3a1a1;
     display: inline-block;
     /* Inline-block is good for centering, but text-align center on the container will handle it */
@@ -515,8 +607,6 @@ nav li:first-child {
     padding: 6px 15px;
     text-decoration: none;
     cursor: pointer;
-    border: var(--bs-btn-border-width) solid var(--bs-btn-border-color);
-    border-radius: var(--bs-btn-border-radius);
     background-color: #f3f4f0;
     margin: 20px;
     font-size: 1.2rem;
@@ -530,6 +620,68 @@ nav li:first-child {
     padding: 6px 15px;
     transform: scale(1.2);
     transition: 0.5s ease;
+}
+
+@media screen and (max-width: 768px) {
+    .scroll-content {
+        display: flex;
+        flex-wrap: nowrap;
+        animation: scroll-horizontal 30s linear infinite;
+        /* 小屏幕项目换行 */
+        justify-content: center;
+    }
+
+    .item {
+        min-width: 150px;
+        /* 缩小项目宽度 */
+        height: 80px;
+        /* 缩小项目高度 */
+    }
+
+    .item img {
+        min-width: 1rem;
+        /* 缩小项目宽度 */
+        height: 80px;
+        /* 缩小项目高度 */
+    }
+
+    .bodyh2 {
+        font-size: 1.5rem;
+        /* 缩小标题字体 */
+    }
+
+    .bodyp {
+        text-align: right;
+        /* 小屏幕描述居中 */
+        font-size: 1.3rem;
+    }
+
+    .scroll-container span {
+        font-size: 1.3rem;
+        /* Smaller font size for the description */
+        padding: 10px 30px;
+    }
+
+    .secbtn {
+        width: 100%;
+        /* 按钮全宽显示 */
+        margin: 10px auto;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .item {
+        min-width: 120px;
+        /* 更小屏幕缩小项目尺寸 */
+        height: 70px;
+    }
+
+    .secbtn {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+
+
 }
 
 /* 第三section:我的方案流程 */
@@ -548,7 +700,7 @@ nav li:first-child {
     display: flex;
     text-align: left;
     color: #fff;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     padding: 10px 40px 0;
 }
 
@@ -586,9 +738,9 @@ nav li:first-child {
 
     /* Adjust layout for smaller tablets and larger phones */
     .project-process span {
-        font-size: 1rem;
+        font-size: 1.3rem;
         /* Smaller font size for the description */
-        padding: 10px 20px;
+        padding: 10px 25px;
         /* Adjust padding */
     }
 
@@ -1747,6 +1899,52 @@ textarea.input {
     .contactForm {
         width: 100%;
     }
+}
+
+/* 提示框 */
+
+.custom-alert {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* 半透明背景 */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* 彈出框內容的設計 */
+.custom-alert-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    width: 300px;
+}
+
+.custom-alert-content p {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #333;
+}
+
+.custom-alert-content button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.custom-alert-content button:hover {
+    background-color: #45a049;
 }
 
 /* 服務介紹 */
